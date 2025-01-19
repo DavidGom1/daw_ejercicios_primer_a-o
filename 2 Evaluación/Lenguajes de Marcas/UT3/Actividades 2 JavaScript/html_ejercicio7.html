@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro por Tipo de Pokémon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        .pokemon-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .pokemon {
+            padding: 10px;
+            border: 1px solid #ddd;
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filtro por Tipo de Pokémon</h1>
+    <button id="show-fire">Mostrar Fuego</button>
+    <button id="show-water">Mostrar Agua</button>
+    <button id="show-electric">Mostrar Eléctrico</button>
+    <button id="show-all">Mostrar Todos</button>
+    <div class="pokemon-list">
+        <div class="pokemon fire">Charmander</div>
+        <div class="pokemon water">Squirtle</div>
+        <div class="pokemon electric">Pikachu</div>
+        <div class="pokemon fire">Vulpix</div>
+        <div class="pokemon water">Psyduck</div>
+        <div class="pokemon electric">Electrike</div>
+    </div>
+
+    <script type="text/javascript">
+        let pokemonList = document.querySelectorAll(".pokemon");
+        document.getElementById("show-fire").addEventListener("click", function() {
+            filtroPorTipo("fire");
+        });
+
+        document.getElementById("show-water").addEventListener("click", function() {
+            filtroPorTipo("water");
+        });
+
+        document.getElementById("show-electric").addEventListener("click", function() {
+            filtroPorTipo("electric");
+        });
+
+        document.getElementById("show-all").addEventListener("click", function() {
+            filtroPorTipo("pokemon");
+        });
+        function filtroPorTipo(clase){
+            for(pokemon of pokemonList){
+                if(!pokemon.classList.contains(clase)){
+                    pokemon.style.display = "none";
+                } else {
+                    pokemon.style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

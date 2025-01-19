@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipos de Marvel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #team-list {
+            list-style-type: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Equipos de Marvel</h1>
+    <button id="avengers-btn">Vengadores</button>
+    <button id="xmen-btn">X-Men</button>
+    <button id="guardians-btn">Guardianes de la Galaxia</button>
+
+    <ul id="team-list"></ul>
+
+    <script type="text/javascript">
+        // Datos de los equipos.
+        const teams = {
+            avengers: ["Iron Man", "Capitán America", "Thor", "Hulk"],
+            xmen: ["Wolverine", "Cíclope", "Tormenta", "Jean Grey"],
+            guardians: ["Star-Lord", "Gamora", "Rocket", "Groot"]
+        };
+        let listaHeroes = document.getElementById('team-list');
+        document.getElementById("avengers-btn").addEventListener("click", function() {
+            const vengadores = teams['avengers'];
+            listarHeroes(vengadores);
+        });
+
+        document.getElementById("xmen-btn").addEventListener("click", function() {
+            const xmen = teams['xmen'];
+            listarHeroes(xmen);
+        });
+
+        document.getElementById("guardians-btn").addEventListener("click", function() {
+            const vengadores = teams['guardians'];
+            listarHeroes(vengadores);
+        });
+        function listarHeroes(heroes){
+            listaHeroes.innerHTML="";
+            for(heroe of heroes){
+                let nodeHeroe = document.createElement('li');
+                nodeHeroe.textContent = heroe;
+                listaHeroes.appendChild(nodeHeroe);
+            }
+        }
+
+    </script>
+</body>
+</html>

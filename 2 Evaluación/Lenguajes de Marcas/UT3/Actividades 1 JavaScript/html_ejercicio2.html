@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2. Cambiar clase de un elemento.</title>
+</head>
+<body>
+    <div id="cuadrado" class="cuadrado activo"></div>
+    <button id="botonToggle">Alternar clase</button>
+
+    <script type="text/javascript">
+        document.getElementById('botonToggle').addEventListener('click', function() {
+            //TODO. Solución del ejercicio. Alternar la clase del elemento.
+            const elementoCuadrado = document.getElementById('cuadrado')
+            if (elementoCuadrado.classList.contains("activo")){
+                elementoCuadrado.classList.remove("activo")
+            } else {
+                elementoCuadrado.classList.add("activo")
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4. Validación de formulario.</title>
+</head>
+<body>
+    <form id="formulario">
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="errores"></p>
+
+    <script type="text/javascript">
+        document.getElementById('formulario').addEventListener('submit', function(e) {
+            e.preventDefault();
+            function comprobarPalabra(texto) {
+                const nums = /^[a-zA-ZáéíóúñüÁÉÍÓÚÑÜ]+$/;
+                return nums.test(texto);
+            }
+            let name = document.getElementById('nombre');
+            let email = document.getElementById('email');
+            let errores = document.getElementById('errores');
+            if(!name.value && !email.value){
+                document.getElementById("errores").innerHTML = "Nombre y e-mail son obligatorios";
+            } else if (!name.value){
+                document.getElementById("errores").innerHTML = "El nombre es obligatorio";
+            } else if(!comprobarPalabra(name.value)){
+                document.getElementById("errores").innerHTML = "El nombre no es una palabra";
+            } else if (!email.value){
+                document.getElementById("errores").innerHTML = "El email es obligatorio";
+            } else {
+                alert("El formulario es correcto");
+            }
+        });
+    </script>
+</body>
+</html>

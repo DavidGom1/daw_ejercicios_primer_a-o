@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel de Poder de Personajes de DC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        #power-level-display {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        progress {
+            width: 200px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nivel de Poder de Personajes de DC</h1>
+    <select id="dc-character-selector">
+        <option value="">--Selecciona un Personaje--</option>
+        <option value="superman">Superman</option>
+        <option value="batman">Batman</option>
+        <option value="wonderwoman">Wonder Woman</option>
+    </select>
+    <div id="power-level-display">
+        <h2 id="dc-character-name"></h2>
+        <progress id="power-level" max="100" value="0"></progress>
+    </div>
+
+    <script type="text/javascript">
+        // Define power levels
+        const powerLevels = {
+            superman: { name: "Superman", level: 95 },
+            batman: { name: "Batman", level: 80 },
+            wonderwoman: { name: "Wonder Woman", level: 90 }
+        };
+        let tituloHeroe = document.getElementById('dc-character-name');
+        let barra = document.getElementById('power-level');
+        document.getElementById("dc-character-selector").addEventListener("change", function() {
+            const heroe = powerLevels[document.getElementById("dc-character-selector").value];
+            tituloHeroe.textContent = heroe.name;
+            barra.value = heroe.level;
+        });
+    </script>
+</body>
+</html>

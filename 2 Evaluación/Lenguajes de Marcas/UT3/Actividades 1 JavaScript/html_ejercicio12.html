@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles_12.css" rel="stylesheet">
+        <title>Ejercicio 12. Juego de Memoria.</title>
+    </head>
+
+    <body>
+        <div id="juegoMemoria">
+            <div class="controles">
+                <button id="iniciarJuego">Nuevo Juego</button>
+                <div id="tiempo">Tiempo: 0s</div>
+                <div id="intentos">Intentos: 0</div>
+            </div>
+            <div id="tablero"></div>
+        </div>
+
+        <script type="text/javascript">
+            class JuegoMemoria {
+            constructor() {
+                this.cartas = [];
+                this.cartasVolteadas = [];
+                this.parejas = ['🌟', '🎮', '🎲', '🎯', '🎪', '🎨', '🎭', '🎪'];
+                this.intentos = 0;
+                this.tiempo = 0;
+                this.temporizador = null;
+                this.juegoIniciado = false;
+                this.inicializar();
+            }
+
+            inicializar() {
+                document.getElementById('iniciarJuego').addEventListener('click', 
+                    () => this.iniciarJuego());
+            }
+
+            iniciarJuego() {
+                this.reiniciarEstado();
+                this.crearTablero();
+                this.iniciarTemporizador();
+                this.juegoIniciado = true;
+            }
+
+            reiniciarEstado() {
+                this.intentos = 0;
+                this.tiempo = 0;
+                this.cartasVolteadas = [];
+                this.actualizarUI();
+                clearInterval(this.temporizador);
+            }
+
+            crearTablero() {
+                //TODO Crear el tablero con las parejas de cartas.
+            }
+
+            voltearCarta(index) {
+                if (!this.juegoIniciado) return;
+                
+                const carta = document.querySelector(`[data-index="${index}"]`);
+                
+                // Verificar si la carta ya está volteada o si ya hay dos cartas volteadas
+                if (carta.classList.contains('volteada') || 
+                    this.cartasVolteadas.length >= 2) {
+                    return;
+                }
+
+                carta.classList.add('volteada');
+                this.cartasVolteadas.push({ index, emoji: this.cartas[index] });
+
+                if (this.cartasVolteadas.length === 2) {
+                    this.intentos++;
+                    this.actualizarUI();
+                    this.verificarPareja();
+                }
+            }
+
+            verificarPareja() {
+                const [carta1, carta2] = this.cartasVolteadas;
+                const sonPareja = carta1.emoji === carta2.emoji;
+
+                setTimeout(() => {
+                    if (!sonPareja) {
+                        document.querySelector(`[data-index="${carta1.index}"]`)
+                            .classList.remove('volteada');
+                        document.querySelector(`[data-index="${carta2.index}"]`)
+                            .classList.remove('volteada');
+                    } else {
+                        this.verificarVictoria();
+                    }
+                    this.cartasVolteadas = [];
+                }, 1000);
+            }
+
+            verificarVictoria() {
+                //TODO Comprobar si el jugador ha ganado la partida (ya no quedan parejas de cartas por voltear).
+            }
+
+            iniciarTemporizador() {
+                this.temporizador = setInterval(() => {
+                    this.tiempo++;
+                    this.actualizarUI();
+                }, 1000);
+            }
+
+            actualizarUI() {
+                //TODO Actualizar el tiempo y los intentos en pantalla.
+            }
+        }
+
+        // Iniciar el juego
+        const juego = new JuegoMemoria();
+
+            //TODO. Solución del ejercicio.
+        </script>
+    </body>
+
+</html>

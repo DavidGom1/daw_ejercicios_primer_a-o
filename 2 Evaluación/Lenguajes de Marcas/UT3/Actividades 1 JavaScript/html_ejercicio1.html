@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1. Cambiar texto de un elemento.</title>
+</head>
+<body>
+    <p id="textoSimple">Texto original</p>
+    <button id="botonSimple">Cambiar texto</button>
+
+    <script type="text/javascript">
+	document.getElementById('botonSimple').addEventListener('click', function() {
+		//TODO. Cambiar el texto del botón.
+        document.getElementById('textoSimple').innerHTML = 'Texto cambiado';
+	});
+    </script>
+</body>
+</html>

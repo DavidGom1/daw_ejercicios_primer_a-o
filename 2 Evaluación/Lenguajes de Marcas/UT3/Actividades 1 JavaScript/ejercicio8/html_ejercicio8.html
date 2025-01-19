@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 9. Pedidos de comida.</title>
+    </head>
+    <body>
+        <div style="width: 40%; margin: auto;">
+            <br>
+            <h1>Pide algo para Comer</h1>
+
+            <p>¿Qué te apetece hoy?</p>
+            <input type="number" id="numero" placeholder="Número">
+            <select id="tipo">
+                <option value="">Selecciona una opción</option>
+                <option value="hamburgesa">Hamburgesa</option>
+                <option value="pizza">Pizza</option>
+            </select>
+            <button onclick="pedir()">Enviar</button>
+            <br><br>
+            <div id="resultado" style="text-align: center;"></div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        //Precio por unidad de las hamburgesas y pizzas.
+        var precioHamburgesa = 5.50;
+        var precioPizza = 6.95;
+        var cantidad = document.getElementById("numero");
+        var eleccion = document.getElementById("tipo");
+        var resultado = document.getElementById("resultado");
+        cantidad.required = true;
+        // Método que se encarga de recoger el número de productos y el tipo de alimentos
+        //, e indicará lo que cuesta dicho pedido al usuario.
+        function pedir() {
+            //TODO Solución del ejercicio 8.
+            let precio = eleccion.value=="hamburgesa"?precioHamburgesa:precioPizza;
+            if(!cantidad.value && !eleccion.value){
+                alert("Debe rellenar el formulario para pedir");
+            }else if(!eleccion.value){
+                alert("Es necesario elegir un producto");
+            }else if(!cantidad.value){
+                alert("Es necesario indicar una cantidad");
+            }else if(cantidad.value <=0){
+                alert("La cantidad debe ser superior a 0")
+            }else{
+                let parrafoDiv = resultado.querySelector("p");
+                let imgDiv = resultado.querySelector("img");
+                if(!parrafoDiv){
+                    let newP = document.createElement("p");
+                    newP.id = "parrafoResultado";
+                    newP.innerHTML = "Ha pedido " + cantidad.value + " unidades de <strong>" + eleccion.value + "</strong>.<br>El precio son: <strong>" + (precio*cantidad.value) + "€</strong>";
+                    resultado.appendChild(newP);
+                } else {
+                    parrafoDiv.innerHTML = "Ha pedido " + cantidad.value + " unidades de <strong>" + eleccion.value + "</strong>.<br>El precio son: <strong>" + (precio*cantidad.value) + "€</strong>";
+                }
+                if(!imgDiv){
+                    let newImg = document.createElement("img");
+                    newImg.id = "imagenResultado";
+                    console.log(newImg);
+                    if(eleccion.value == "hamburgesa"){
+                        newImg.src = "./img/burger.png";
+                    } else {
+                        newImg.src = "./img/pizza.png";
+                    }
+                    resultado.appendChild(newImg);
+                } else {
+                    if(eleccion.value == "hamburgesa"){
+                        imgDiv.src = "./img/burger.png";
+                    } else {
+                        imgDiv.src = "./img/pizza.png";
+                    }
+                }
+            }
+        }
+    </script>
+</html>

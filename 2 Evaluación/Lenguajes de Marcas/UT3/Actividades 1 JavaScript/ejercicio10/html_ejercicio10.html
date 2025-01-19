@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 11. La ardilla y su madriguera</title>
+    </head>
+    <body>
+        <div style="width: 40%; margin: auto;">
+            <br>
+            <h1>La Ardilla y su Madriguera</h1>
+
+            <div id="resultado" style="text-align: center;"></div>
+
+            <p>Ayuda a la ardilla a tener sus nueces</p>
+            <input type="number" id="numero" placeholder="Nueces para la ardilla">
+            <button onclick="darNueces()">Dar</button>
+            <br>
+            <br>
+            <button onclick="invierno()">Llega el invierno</button>
+            <br>
+            <br>
+            <div id="errores" style="color: red;"></div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        // Variable que contiene la cantidad de nueces que caben en la madriguera.
+        var nuecesMaximos = 25;
+        // Variable que contiene la cantidad de nueces mínima que puede haber.
+        var nuecesMinimos = 0;
+        // Variable que contiene la cantidad actual de nueces en la madriguera.
+        var nuecesActuales = 0;
+
+        function establecerNueces() {
+            //TODO. Implementar este método, estableciendo la imagen de las nueces que tiene la ardilla.
+        }
+
+        function invierno() {
+            // TODO. Hacer que la madriguera se quede completamente sin nueces.
+
+            // Tras vaciar, volvemos a establecer los nueces en la madriguera.
+            establecerNueces();
+        }
+
+        function darNueces() {
+            //TODO. Implementar este método para dar nueces a la ardilla para su madriguera.            
+
+            // Establecemos de nuevo el estado de la madriguera.
+            establecerNueces();
+        }
+
+        //Establecemos inicialmente los nueces en la madriguera (inicialmente es 0).
+        establecerNueces();
+    </script>
+</html>

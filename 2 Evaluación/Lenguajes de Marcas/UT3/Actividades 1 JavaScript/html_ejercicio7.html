@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 8. Solicitar manzanas.</title>
+    </head>
+    <body>
+        <div style="width: 30%; margin: auto;">
+            <br>
+            <h1>Solicitud de Manzanas</h1>
+
+            <p>¿Cuántas manzanas quieres?</p>
+            <input type="number" id="manzanas">
+            <button onclick="solicitarManzanas()">Solicitar manzanas</button>
+            <br>
+
+            <p id="manzanasRestantes">Te quedan 10 manzanas en la cesta.</p>
+        </div>
+    </body>
+    <script type="text/javascript">
+        // Número total inicial de manzanas.
+        var manzanas = 10;
+
+        // Método que se encarga de solicitar el número de manzanas que haya introducido el usuario.
+        function solicitarManzanas() {
+            let manzanasSolicitadas = document.getElementById("manzanas").value;
+            if((manzanas - manzanasSolicitadas)>=0){
+                manzanas = manzanas - manzanasSolicitadas
+            } else {
+                if(manzanas==0){
+                    alert("Ya no quedan manzanas en la cesta")
+                }else{
+                    alert("No quedan tantas manzanas")
+                }
+            }
+            document.getElementById("manzanasRestantes").innerHTML = "Te quedan " + manzanas + " manzanas en la cesta."
+        }
+    </script>
+</html>

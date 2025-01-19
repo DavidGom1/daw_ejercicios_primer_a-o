@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Héroes de Marvel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .hero-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .hero, .villain {
+            padding: 10px;
+            border: 1px solid #ddd;
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de Héroes de Marvel</h1>
+    <button id="count-heroes">Contar Héroes</button>
+    <div class="hero-list">
+        <div class="hero">Iron Man</div>
+        <div class="hero">Thor</div>
+        <div class="hero">Black Widow</div>
+        <div class="villain">Loki</div>
+        <div class="hero">Hulk</div>
+        <div class="villain">Thanos</div>
+    </div>
+    <p>Héroes Totales: <span id="hero-count">0</span></p>
+
+    <script type="text/javascript">
+        let heroesTotales = document.getElementById('hero-count');
+        document.getElementById("count-heroes").addEventListener("click", function() {
+            heroesTotales.textContent = document.querySelectorAll('.hero').length;
+        });
+    </script>
+</body>
+</html>

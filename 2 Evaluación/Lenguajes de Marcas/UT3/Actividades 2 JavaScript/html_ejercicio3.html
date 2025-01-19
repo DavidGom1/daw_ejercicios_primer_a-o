@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Nintendo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        #character-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personajes de Nintendo</h1>
+    <select id="character-selector">
+        <option value="">--Selecciona un personaje--</option>
+        <option value="mario">Mario</option>
+        <option value="link">Link</option>
+        <option value="samus">Samus</option>
+    </select>
+    <div id="character-info">
+        <h2 id="character-name"></h2>
+        <p id="character-description"></p>
+    </div>
+
+    <script type="text/javascript">
+        // Datos de los personajes
+        const characters = {
+            mario: { name: "Mario", description: "Un fontanero que salva el reino de los champiñones." },
+            link: { name: "Link", description: "Un héroe destinado a proteger a Hyrule del mal." },
+            samus: { name: "Samus", description: "Una cazarrecompensas del espacio con un traje poderoso." }
+        };
+
+        document.getElementById("character-selector").addEventListener("change", function() {
+            const character = characters[document.getElementById("character-selector").value];
+            const name = document.getElementById('character-name');
+            const desc = document.getElementById('character-description');
+            name.textContent = character.name;
+            desc.textContent = character.description;
+        });
+    </script>
+</body>
+</html>

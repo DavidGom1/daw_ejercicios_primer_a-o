@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #pokemon-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pokémon Info</h1>
+    <button id="pikachu-btn">Pikachu</button>
+    <button id="charmander-btn">Charmander</button>
+    <button id="bulbasaur-btn">Bulbasaur</button>
+
+    <div id="pokemon-info">
+        <h2 id="pokemon-name"></h2>
+        <p id="pokemon-type"></p>
+        <p id="pokemon-description"></p>
+    </div>
+
+    <script type="text/javascript">
+        // Datos de los Pokémon
+        const pokemons = {
+            pikachu: { name: "Pikachu", type: "Eléctrico", description: "Un Pokémon amarillo que almacena electricidad.", imagen: "img/pikachu.png" },
+            charmander: { name: "Charmander", type: "Fuego", description: "Un Pokémon lagarto pequeño que escupe fuego.", imagen: "img/charmander.png" },
+            bulbasaur: { name: "Bulbasaur", type: "Hierba/Veneno", description: "Un Pokémon que tiene una bulba que crece en su espalda.", imagen: "img/bulbasaur.png" }
+        };
+        let divInfo = document.getElementById('pokemon-info');
+        let name = document.getElementById('pokemon-name');
+        let type = document.getElementById('pokemon-type');
+        let desc = document.getElementById('pokemon-description');
+        let img = document.createElement('img');
+        divInfo.appendChild(img);
+
+
+        document.getElementById("pikachu-btn").addEventListener("click", function() {
+            const pikachu = pokemons['pikachu'];
+            name.textContent = pikachu.name;
+            type.textContent = pikachu.type;
+            desc.textContent = pikachu.description;
+            img.src = pikachu.imagen;
+        });
+
+        document.getElementById("charmander-btn").addEventListener("click", function() {
+            const charmander = pokemons['charmander'];
+            name.textContent = charmander.name;
+            type.textContent = charmander.type;
+            desc.textContent = charmander.description;
+            img.src = charmander.imagen;
+        });
+
+        document.getElementById("bulbasaur-btn").addEventListener("click", function() {
+            const bulbasaur = pokemons['bulbasaur'];
+            name.textContent = bulbasaur.name;
+            type.textContent = bulbasaur.type;
+            desc.textContent = bulbasaur.description;
+            img.src = bulbasaur.imagen;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Superpoderes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de Superpoderes</h1>
+    <p>Nivel de poder: <span id="power-level">0</span></p>
+    <button id="increase-power">Aumentar Poder</button>
+    <button id="decrease-power">Reducir Poder</button>
+
+    <script type="text/javascript">
+        // Valor inicial del poder
+        let powerLevel = 0;
+        let powerText = document.getElementById('power-level');
+
+        document.getElementById("increase-power").addEventListener("click", function() {
+            // TODO Aumentar el poder en 1 y mostrarlo (no puede ser más de 100)
+            if(powerLevel<100){
+                powerLevel++;
+            }
+            powerText.textContent=powerLevel;
+
+        });
+
+        document.getElementById("decrease-power").addEventListener("click", function() {
+            // TODO Reducir el poder en 1 y mostrarlo (no puede ser menos de 0)
+            if(powerLevel>0){
+                powerLevel--;
+            }
+            powerText.textContent=powerLevel;
+        });
+    </script>
+</body>
+</html>

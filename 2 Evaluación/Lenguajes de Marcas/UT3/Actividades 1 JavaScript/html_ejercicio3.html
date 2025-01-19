@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3. Lista de elementos dinámica.</title>
+</head>
+<body>
+    <ul id="listaItems"></ul>
+    <input type="text" id="nuevoItem">
+    <button id="agregarItem">Agregar</button>
+
+    <script type="text/javascript">
+        document.getElementById('agregarItem').addEventListener('click', function() {
+            //TODO. Solución del ejercicio. Añadir elementos a la lista.
+            let text = document.getElementById('nuevoItem');
+            let uList = document.getElementById('listaItems');
+            if(text.value != ''){
+                let newLine = document.createElement("li");
+                newLine.className = "listaPrueba";
+                newLine.innerText = text.value;
+                uList.appendChild(newLine);
+            }
+            text.value = ""
+
+        });
+    </script>
+</body>
+</html>

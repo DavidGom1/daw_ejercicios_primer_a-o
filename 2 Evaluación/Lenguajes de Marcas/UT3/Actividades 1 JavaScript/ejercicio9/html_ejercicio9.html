@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 10. Beber de un jarrón de agua</title>
+    </head>
+    <body>
+        <div style="width: 40%; margin: auto;">
+            <br>
+            <h1>Jarrón de Agua</h1>
+
+            <div id="resultado" style="text-align: center;"></div>
+
+            <p>¿Tienes sed?</p>
+            <button onclick="llenar()">Llenar el Jarrón</button>
+            <button onclick="vaciar()">Vaciar el Jarrón</button>
+            <br><br>
+            <input type="number" id="numero" placeholder="Cuánto quieres beber">
+            <button onclick="beber()">Beber</button>
+            <br>
+            <br>
+            <div id="errores" style="color: red;"></div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        // Variable que contiene la capacidad máxima de agua que puede tener el jarrón.
+        var capacidadMaximaJarron = 100;
+        // Variable que contiene la capacidad mínima de agua que puede tener el jarrón.
+        var capacidadMinimaJarron = 0;
+        // Variable que contiene la capacidad actual del jarrón.
+        var capacidadActualJarron = 0;
+
+        // Método que se encarga de hacer que el jarrón aparezca según la cantidad de agua que tenga.
+        function establecerJarron() {
+            // TODO. Implementar este método para establecer la imagen del jarrón según el agua que tenga.
+        }
+
+        function llenar() {
+
+            // TODO. Implementar el método de llenar el jarrón.
+            
+
+            // Tras llenar, volvemos a establecer el jarrón con su cantidad de agua.
+            establecerJarron();
+        }
+
+        function vaciar() {
+
+            // TODO. Implementar el método de vaciar el jarrón.
+
+
+            // Tras vaciar, volvemos a establecer el jarrón con su cantidad de agua.
+            establecerJarron();
+        }
+
+        // Método que, según lo que haya indicado el usuario que quiera beber, reduzca la cantidad de agua
+        // en el jarrón, o le indique (mediante alert) que no puede beber esa cantidad de agua porque no queda.
+        function beber() {
+            // TODO. Implementar el método para beber una cantidad de agua.
+
+            // Tras beber, volvemos a establecer el jarrón con su cantidad de agua.
+            establecerJarron();
+        }
+
+        //Establecemos inicialmente el jarrón según la cantidad de agua que tiene (inicialmente es 0).
+        establecerJarron();
+    </script>
+</html>
