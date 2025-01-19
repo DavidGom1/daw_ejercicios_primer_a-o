@@ -1,69 +1,84 @@
-💻 Soluciones DAW 🌟
+# 📚 daw_ejercicios_primer_año
 
-Bienvenido/a al repositorio de Posibles Soluciones para Ejercicios No Evaluables de nuestro grado superior de Desarrollo de Aplicaciones Web (DAW). Aquí compartimos ideas, soluciones y enfoques para resolver ejercicios y prácticas de forma colaborativa y divertida. 🚀
+¡Bienvenidos al repositorio de **DAW - Ejercicios Primer Año**! 🎉 Aquí encontrarás posibles soluciones a ejercicios que iremos resolviendo durante este curso. Este espacio está pensado para **compartir, aprender y colaborar** con nuestros compañeros. 🤝
 
-📚 ¿Qué encontrarás aquí?
+---
 
-Este repositorio está diseñado para ser un apoyo extra en tu aprendizaje. Dentro encontrarás:
+## 🚀 ¿Qué encontrarás aquí?
 
-🔧 Soluciones propuestas para ejercicios de cada módulo.
+🔹 Soluciones a ejercicios de DAW propuestas por tus compañeros.  
+🔹 Ejemplos prácticos y explicaciones paso a paso.  
+🔹 Recursos útiles para complementar nuestro aprendizaje.
 
-📝 Explicaciones detalladas del razonamiento detrás de cada solución.
+---
 
-⚡ Alternativas creativas para abordar los problemas.
+## 🛠️ Estructura del proyecto
 
-🤝 Un espacio colaborativo donde podemos mejorar entre todos.
+El repositorio está organizado en carpetas según las asignaturas y temáticas:  
 
-📂 Estructura del repositorio
+```
+📂 daw_ejercicios_primer_año
+ ├── 📂 evaluacion1
+ │    ├── 📂 programacion
+ │    │    ├── 📂 UT1
+ │    │    │    ├── 📂 EJERCICIOS_Carpeta
+ │    │    │    │    ├── ejercicio1.js
+ │    │    │    │    └── ejercicio2.js
+ │    │    ├── 📂 UT2
+ │    │    │    └── ...
+ │    └── ...
+ ├── 📂 evaluacion2
+ │    ├── 📂 bases_datos
+ │    │    ├── 📂 UT3
+ │    │    │    └── ...
+ │    └── ...
+ └── README.md
+```
 
-Cada módulo tiene su propio directorio. Dentro de cada uno encontrarás los ejercicios organizados por temas:
+---
 
-📦 Modulo-1
- ┣ 📂 Tema-1
- ┃ ┣ 📄 ejercicio-1.md
- ┃ ┗ 📄 ejercicio-2.md
- ┣ 📂 Tema-2
- ┃ ┗ 📄 ejercicio-1.md
-📦 Modulo-2
- ┗ 📂 Tema-1
-   ┗ 📄 ejercicio-1.md
+## 💡 Cómo usar este repositorio
 
-🚀 Cómo colaborar
+1. **Explora** las carpetas y encuentra el ejercicio que necesitas.
+2. **Descarga o clona** este repositorio para acceder al contenido:
+   ```bash
+   git clone https://github.com/tuusuario/daw_ejercicios_primer_año.git
+   ```
+3. **Contribuye**: Si tienes una solución alternativa o una mejora, ¡no dudes en compartirla! 🙌
 
-¡Nos encantaría que participes! Sigue estos pasos para contribuir:
+---
 
-Haz un fork de este repositorio.
+## 🌟 ¿Cómo contribuir?
 
-Crea una rama para tu contribución:
+Si tienes una solución, corrección o mejora, sigue estos pasos:
 
-git checkout -b solucion-ejercicioX
+1. **Haz un fork** del repositorio. 🍴
+2. Realiza tus cambios en una rama nueva:
+   ```bash
+   git checkout -b mejora-ejercicio1
+   ```
+3. Haz un commit claro y descriptivo:
+   ```bash
+   git commit -m "Mejora en el ejercicio 1"
+   ```
+4. **Crea un pull request** explicando tus cambios. 💬
 
-Añade tu solución en el directorio correspondiente.
+---
 
-Envía un pull request con una breve descripción de tu aporte.
+## 🖋️ Autor
 
-🌟 Reglas para contribuir
+Este repositorio ha sido creado por **@DaGoDev** ✨ para fomentar la colaboración y el aprendizaje entre compañeros del curso de **DAW**.
 
-Asegúrate de que tu solución sea clara y esté bien comentada. 📝
+---
 
-Explica tu razonamiento o los pasos seguidos para resolver el ejercicio.
+## 📧 Contacto
 
-Comparte alternativas si es posible.
+¿Tienes alguna duda o sugerencia? ¡Escríbeme! 😊  
+📩 Correo: [davgom.dev@gmail.com](mailto:davgom.dev@gmail.com)  
+📌 GitHub: [DavidGom1](https://github.com/DavidGom1)
 
-🎯 Objetivo
+---
 
-El objetivo principal de este repositorio es apoyarnos mutuamente, aprender juntos y enriquecer nuestros conocimientos mientras resolvemos los ejercicios de manera creativa. 🌈
+¡Esperamos que este repositorio te sea útil y te ayude a mejorar día a día! 🚀
 
-🛠️ Tecnologías usadas
-
-A medida que avancemos en el curso, usaremos diferentes herramientas y lenguajes. Algunas de las más comunes serán:
-
-HTML, CSS y JavaScript 🕸️
-
-PHP y MySQL 🐘
-
-Python 🐍
-
-Node.js ⚙️
-
-Frameworks como Laravel y Vue.js 🌐
+**¡A programar se ha dicho!** 💻✨
