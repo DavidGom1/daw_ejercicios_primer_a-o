@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de citas</title>
+</head>
+<body>
+    <button id="showQuote" onclick="mostrarCita()">Mostrar cita</button>
+    <p id="quote"></p>
+
+    <script type="text/javascript">
+        const quotes = [
+            "La vida es un sueño, y los sueños, sueños son.",
+            "El conocimiento es poder.",
+            "No dejes para mañana lo que puedes hacer hoy."
+        ];
+    
+        function mostrarCita() {
+            let quoteText = document.getElementById("quote");
+            let newText = quotes[Math.floor(Math.random()*quotes.length)];
+            while(quoteText.textContent==newText){
+                console.log("CAMBIO");
+                newText = quotes[Math.floor(Math.random()*quotes.length)];
+            }
+            quoteText.textContent = newText;
+        }
+    </script>
+</body>
+</html>

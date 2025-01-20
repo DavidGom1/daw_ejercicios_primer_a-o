@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reordenar lista</title>
+</head>
+<body>
+    <ul id="itemList">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <button id="shuffleBtn" onclick="reordenarLista()">Reordenar</button>
+
+    <script type="text/javascript">
+        function reordenarLista() {
+            let lista = document.getElementById("itemList");
+            elementos = lista.querySelectorAll('li')
+            
+            //ALGORITMO FISHER-YATES
+            for(let i=elementos.length-1; i>=0; i--){
+                const j = Math.floor(Math.random()*elementos.length);
+                [elementos[i].textContent, elementos[j].textContent] = [elementos[j].textContent, elementos[i].textContent]
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercambio de imágenes</title>
+</head>
+<body>
+    <img id="image" src="img/gato_naranja.png" alt="Imagen inicial" width="300" onclick="cambiarImagen()">
+
+    <script type="text/javascript">
+        var origenImagen = "img/gato_naranja.png";
+        var otraImagen = "img/gato_tuxedo.png";
+        let imagen = document.getElementById("image");
+        function cambiarImagen() {
+            imagen.src=imagen.getAttribute('src')==origenImagen?otraImagen:origenImagen;
+        }
+    </script>
+</body>
+</html>

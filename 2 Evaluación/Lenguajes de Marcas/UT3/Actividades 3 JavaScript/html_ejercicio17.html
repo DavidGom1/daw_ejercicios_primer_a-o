@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom de imagen</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #zoomImage {
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <img id="zoomImage" src="img/gato_naranja.png" alt="Imagen de ejemplo" onmouseenter="zoomIn()" onmouseleave="zoomOut()">
+
+    <script type="text/javascript">
+
+        var imageZoom = 1;
+        var imagen = document.getElementById("zoomImage");
+        function zoomIn() {
+            imagen.style.scale = imageZoom+0.5;
+        }
+
+        function zoomOut() {
+            imagen.style.scale = imageZoom;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar tareas</title>
+</head>
+<body>
+    <ul id="taskList">
+        <li id="tarea-1">Tarea 1 <button class="deleteBtn" onclick="eliminarTarea(1)">Eliminar</button></li>
+        <li id="tarea-2">Tarea 2 <button class="deleteBtn" onclick="eliminarTarea(2)">Eliminar</button></li>
+    </ul>
+
+    <script type="text/javascript">
+        function eliminarTarea(idTarea) {
+            document.getElementById("taskList").removeChild(document.getElementById("tarea-" + idTarea));
+        }
+    </script>
+</body>
+</html>

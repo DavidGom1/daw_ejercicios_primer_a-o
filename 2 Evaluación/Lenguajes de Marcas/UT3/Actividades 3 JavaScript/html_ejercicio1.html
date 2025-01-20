@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resaltador dinámico</title>
+    <style>
+        p {
+            background-color: white;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>Párrafo 1</p>
+    <p>Párrafo 2</p>
+    <p>Párrafo 3</p>
+    <button id="highlightBtn" onclick="resaltar()">Resaltar</button>
+
+    <script type="text/javascript">
+        function resaltar() {
+            for(parrafo of document.querySelectorAll('p')){
+                parrafo.style.color="Red";
+            }
+        }
+    </script>
+</body>
+</html>
