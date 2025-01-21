@@ -1,0 +1,227 @@
+<html>
+
+<head>
+	<title>Lista de Vuelos</title>
+	<style type="text/css">
+		body {
+			font-family: "Calibri";
+			display: flex;
+			flex-direction: column;
+			background-color: black;
+		}
+
+		header {
+			background: linear-gradient(lightyellow, yellow);
+			font-size: 64px;
+			font-weight: bold;
+			color: black;
+			display: flex;
+			flex-direction: row;
+		}
+
+		.main_icon {
+			margin: 16px 16px 16px 16px;
+		}
+
+		footer {
+			background: linear-gradient(#777, #444);
+			padding: 1em 1em 1em 1em;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		#current_time {
+			font-size: xx-large;
+			font-weight: bold;
+			color: white;
+		}
+
+		#main_panel {
+			flex-grow: 1;
+		}
+
+		.main_title {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.row_titles {
+			margin-top: 0.5em;
+		}
+
+		.row_titles,
+		.row_data {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.col_terminal,
+		.col_remark {
+			width: 15%;
+		}
+
+		.col_flight,
+		.col_time,
+		.col_gate {
+			width: 10%;
+		}
+
+		.col_dest {
+			width: 40%;
+		}
+
+		.col_actions {
+			width: 20%;
+		}
+
+		.cell {
+			font-family: monospace;
+			font-size: x-large;
+			margin: 0.1em 0.1em 0.1em 0.1em;
+			background-color: #444;
+			color: #ccc;
+		}
+
+		.col_flight,
+		.col_gate {
+			color: yellow;
+		}
+
+		.col_remark {
+			color: lime;
+		}
+
+		.remark_warning {
+			color: red;
+		}
+
+		.title {
+			color: white;
+			font-weight: bold;
+			background-color: black;
+		}
+
+		.cell input {
+			max-width: 100px;
+			margin: 5px;
+		}
+
+		select,
+		button {
+			margin: 5px;
+		}
+
+		select {
+			width: 70px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<img class="main_icon" src="departure_128.png" />
+		<div class="main_title">Departures</div>
+	</header>
+	<div id="main_panel">
+		<div class="row_titles">
+			<div class="title cell col_terminal">Terminal</div>
+			<div class="title cell col_flight">Flight</div>
+			<div class="title cell col_dest">Destination</div>
+			<div class="title cell col_time">Time</div>
+			<div class="title cell col_gate">Gate</div>
+			<div class="title cell col_remark">Remark</div>
+			<div class="title cell col_actions">Change Flight</div>
+		</div>
+
+		<div id="flights-list">
+			<div class="row_data flight" id="flight-1">
+				<div class="cell col_terminal">Terminal D</div>
+				<div class="cell col_flight">BF117</div>
+				<div class="cell col_dest">Edinburgh</div>
+				<div class="cell col_time">06:45</div>
+				<div class="cell col_gate">40</div>
+				<div class="cell col_remark" id="flight-1-remark"></div>
+				<div class="cell col_actions">
+					<select id="flight-1-actions">
+						<option value="CHECK-IN">CHECK-IN</option>
+						<option value="DELAYED">DELAYED</option>
+						<option value="CANCELLED">CANCELLED</option>
+					</select>
+					<button class="change-status">Change</button>
+					<button class="remove-button">Remove</button>
+				</div>
+			</div>
+			<div class="row_data flight" id="flight-2">
+				<div class="cell col_terminal">Terminal B</div>
+				<div class="cell col_flight">BR165</div>
+				<div class="cell col_dest">Brusells</div>
+				<div class="cell col_time">06:50</div>
+				<div class="cell col_gate">10</div>
+				<div class="cell col_remark" id="flight-2-remark"></div>
+				<div class="cell col_actions">
+					<select id="flight-2-actions">
+						<option value="">NONE</option>
+						<option value="CHECK-IN">CHECK-IN</option>
+						<option value="ON-TIME">ON-TIME</option>
+						<option value="DELAYED">DELAYED</option>
+					</select>
+					<button class="change-status">Change</button>
+					<button class="remove-button">Remove</button>
+				</div>
+			</div>
+			<div class="row_data flight" id="flight-3">
+				<div class="cell col_terminal">Terminal A</div>
+				<div class="cell col_flight">CX1347</div>
+				<div class="cell col_dest">Bucharest</div>
+				<div class="cell col_time">06:55</div>
+				<div class="cell col_gate">22</div>
+				<div class="cell col_remark" id="flight-3-remark">CHECK-IN</div>
+				<div class="cell col_actions">
+					<select id="flight-3-actions">
+						<option value="">NONE</option>
+						<option value="CHECK-IN">CHECK-IN</option>
+						<option value="ON-TIME">ON-TIME</option>
+						<option value="DELAYED">DELAYED</option>
+					</select>
+					<button class="change-status">Change</button>
+					<button class="remove-button">Remove</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row_data" id="add-flight">
+			<div class="cell col_terminal">
+				<input type="text" id="new-flight-terminal">
+			</div>
+			<div class="cell col_flight">
+				<input type="text" id="new-flight-ref">
+			</div>
+			<div class="cell col_dest">
+				<input type="text" id="new-flight-dest">
+			</div>
+			<div class="cell col_time"><input type="text" id="new-flight-time"></div>
+			<div class="cell col_gate"><input type="number" id="new-flight-gate"></div>
+			<div class="cell col_remark">
+				<select id="new-flight-remark">
+					<option value="">NONE</option>
+					<option value="CHECK-IN">CHECK-IN</option>
+					<option value="ON-TIME">ON-TIME</option>
+					<option value="DELAYED">DELAYED</option>
+				</select>
+			</div>
+			<div class="cell col_actions">
+				<button id="add-flight-button">Add Flight</button>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<button id="remove-all-button">Remove all</button>
+		<div id="current_time">Current time: 00:00 GMT+1</div>
+	</footer>
+
+
+	<script src="dinamic.js" charset="UTF-8"></script>
+</body>
+
+</html>
