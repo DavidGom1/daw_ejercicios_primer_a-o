@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Ajedrez</title>
+    <style>
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .flex-center {
+            align-items: center;
+        }
+
+        .casilla {
+            border: 1px solid black;
+        }
+
+        .blanca {
+            background-color: white;
+            color: black;
+        }
+
+        .negra {
+            background-color: black;
+            color: white;
+        }
+
+        .boton_casilla {
+            width: 50px;
+            height: 50px;
+        }
+
+        #tablero_ajedrez {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+        }
+
+        .reiniciar-tablero {
+            margin-top: 20px;
+            width: 50%;
+            height: 50px;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex flex-col flex-center">
+        <h1>Tablero de Ajedrez</h1>
+
+        <img src="chess.png" alt="Tablero de ajedrez">
+
+        <div id="tablero_ajedrez"></div>
+
+        <button class="reiniciar-tablero">Reiniciar Tablero</button>
+    </div>
+
+    <script src="dinamic.js"></script>
+</body>
+
+</html>
