@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semáforo</title>
+    <style>
+        .light {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: gray;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="red" class="light" style="background-color: red"></div>
+    <div id="yellow" class="light" style="background-color: gray"></div>
+    <div id="green" class="light" style="background-color: gray"></div>
+    <button id="changeLight" onclick="cambiarSemaforo()">Cambiar</button>
+
+    <script type="text/javascript">
+
+        var isRedOn = true;
+        var isYellowOn = false;
+        var isGreenOn = false;
+
+        function cambiarSemaforo () {
+            if(isRedOn){
+                [isRedOn, isYellowOn] = [isYellowOn, isRedOn];
+                document.getElementById("red").style.backgroundColor="grey"
+                document.getElementById("yellow").style.backgroundColor="yellow";
+            } else if(isYellowOn){
+                [isYellowOn, isGreenOn] = [isGreenOn, isYellowOn];
+                document.getElementById("yellow").style.backgroundColor="grey"
+                document.getElementById("green").style.backgroundColor="green";
+            } else {
+                [isGreenOn, isRedOn] = [isRedOn, isGreenOn];
+                document.getElementById("green").style.backgroundColor="grey"
+                document.getElementById("red").style.backgroundColor="red";
+            }
+        }
+    </script>
+</body>
+</html>

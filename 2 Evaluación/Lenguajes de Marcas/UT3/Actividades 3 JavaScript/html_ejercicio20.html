@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de elementos</title>
+    <style>
+        h1, p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Encabezado 1</h1>
+    <h1>Encabezado 2</h1>
+    <p>Párrafo 1</p>
+    <p>Párrafo 2</p>
+    <button id="changeColorButton" onclick="changeColor()">Cambiar color de los textos</button>
+
+    <script type="text/javascript">
+        const colors = [
+            "red",
+            "green",
+            "blue",
+            "yellow",
+            "orange",
+            "purple",
+            "pink",
+            "brown",
+            "black",
+            "white"
+        ];
+
+        function changeColor() {
+            let texts = document.querySelectorAll("h1, p");
+            let listaColores = [];
+            for(text of texts){
+                let color = colors[Math.floor(Math.random()*colors.length)];
+                while(listaColores.indexOf(color)!=-1){
+                    color = colors[Math.floor(Math.random()*colors.length)];
+                }
+                listaColores.push(color)
+                text.style.color = color;
+            }
+        }
+    </script>
+</body>
+</html>

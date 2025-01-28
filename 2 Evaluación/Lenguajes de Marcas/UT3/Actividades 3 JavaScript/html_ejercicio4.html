@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto editable</title>
+</head>
+<body>
+    <div id="editable" ondblclick="editarTexto()">
+        <p>Haz doble clic para editar este texto</p>
+    </div>
+
+    <script type="text/javascript">
+        let parrafo = document.getElementById('editable').querySelector('p');
+        let editorTexto = document.createElement('input');
+        function editarTexto() {
+            console.log(parrafo.textContent);
+            //editorTexto.type = "text";
+            editorTexto.value = parrafo.textContent;
+            editorTexto.id = parrafo.id;
+            parrafo.replaceWith(editorTexto);
+        }
+        editorTexto.addEventListener('keydown', (event) =>{
+            if(event.key ==="Enter"){
+                parrafo.textContent = editorTexto.value;
+                editorTexto.replaceWith(parrafo);
+            }
+        });
+    </script>
+</body>
+</html>

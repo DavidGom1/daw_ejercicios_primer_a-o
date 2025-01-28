@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de tema</title>
+    <style>
+        body.light {
+            background-color: white;
+            color: black;
+        }
+        body.dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body class="light">
+    <button id="themeToggle" onclick="cambiarTema()">Cambiar tema</button>
+
+    <script type="text/javascript">
+        var darkTheme = false;
+        let body = document.querySelector('body');
+        function cambiarTema() {
+            darkTheme?(body.className="light", darkTheme=false):(body.className="dark", darkTheme=true);
+        }
+    </script>
+</body>
+</html>

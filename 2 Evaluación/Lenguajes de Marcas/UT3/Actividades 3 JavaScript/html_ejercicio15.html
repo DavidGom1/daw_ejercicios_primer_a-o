@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el color</title>
+    <style>
+        #colorBox {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="colorBox" style="background-color: blue"></div>
+    <input type="text" id="colorInput" placeholder="Escribe el color en hexadecimal">
+    <button id="checkColor" onclick="comprobarColor()">Comprobar</button>
+    <p id="result"></p>
+
+    <script type="text/javascript">
+        var cajaColor = document.getElementById("colorBox");
+        var campoTexto = document.getElementById("colorInput");
+        function comprobarColor() {
+            campoTexto.value.startsWith("#")?cajaColor.style.backgroundColor = campoTexto.value : cajaColor.style.backgroundColor = "#"+campoTexto.value;
+        }
+    </script>
+</body>
+</html>

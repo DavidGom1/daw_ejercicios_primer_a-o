@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de colores</title>
+    <style>
+        .colorBox {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="generateColor" onclick="generarColor()">Generar color</button>
+    <div id="colorContainer"></div>
+
+    <script type="text/javascript">
+        const colores = [
+            'red',
+            'green',
+            'blue',
+            'yellow',
+            'orange',
+            'purple',
+            'pink',
+            'brown',
+            'black',
+            'white'
+        ];
+        let contendorCajas = document.getElementById("colorContainer");
+        function generarColor() {
+            let color = colores[Math.floor(Math.random()*colores.length)];
+            let nuevaCaja = document.createElement('div');
+            nuevaCaja.className = "colorBox";
+            nuevaCaja.style.backgroundColor = color;
+            contendorCajas.appendChild(nuevaCaja);
+        }
+    </script>
+</body>
+</html>

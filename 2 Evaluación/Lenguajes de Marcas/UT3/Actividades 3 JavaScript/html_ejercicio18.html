@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto parpadeante</title>
+</head>
+<body>
+    <p id="blinkText">¡Hazme parpadear!</p>
+    <button id="blinkButton" onclick="toggleBlinking()">Iniciar parpadeo</button>
+
+    <script type="text/javascript">
+        let isBlinking = false;
+        let interval;
+        let blinkText = document.getElementById("blinkText");
+
+        function toggleBlinking() {
+            if (!isBlinking) {
+                isBlinking = true;
+                interval = setInterval(() => {
+                    blinkText.style.color = blinkText.style.color === "black" ? "white" : "black";
+                }, 250);
+            } else {
+                isBlinking = false;
+                clearInterval(interval);
+                blinkText.style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>

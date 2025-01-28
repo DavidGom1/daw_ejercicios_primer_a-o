@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formateador de texto</title>
+</head>
+<body>
+    <textarea id="textArea" rows="4" cols="50">Escribe algo aquí...</textarea>
+    <br>
+    <button id="boldButton" onclick="toggleBold()">Negrita</button>
+    <button id="italicButton" onclick="toggleItalic()">Cursiva</button>
+    <button id="colorButton" onclick="changeColor()">Cambiar color</button>
+    <button id="sizeButton" onclick="increaseSize()">Aumentar tamaño</button>
+
+    <script type="text/javascript">
+
+        const colors = [
+            "red",
+            "green",
+            "blue",
+            "yellow",
+            "orange",
+            "purple",
+            "pink",
+            "brown",
+            "black",
+            "white"
+        ];
+        const inputBox = document.getElementById("textArea");
+        let negrita = false;
+        let cursiva = false;
+        let fontSize = Math.floor(window.getComputedStyle(inputBox).fontSize.split("px")[0]);
+
+        function toggleBold() {
+            negrita = !negrita;
+            inputBox.style.fontWeight = negrita? "bold" : "normal";
+        }
+
+        function toggleItalic() {
+            cursiva = !cursiva;
+            inputBox.style.fontStyle = cursiva? "italic" : "normal";            
+        }
+
+        function changeColor() {
+            let colorRandom = colors[Math.floor(Math.random()*colors.length)]
+            while(inputBox.style.color==colorRandom){
+                colorRandom=colors[Math.floor(Math.random()*colors.length)];
+            }
+            inputBox.style.color=colorRandom;
+        }
+
+        function increaseSize() {
+            fontSize++;
+            inputBox.style.fontSize = fontSize+"px";
+        }
+    </script>
+</body>
+</html>

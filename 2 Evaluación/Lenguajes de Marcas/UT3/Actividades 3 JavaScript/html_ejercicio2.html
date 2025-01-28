@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador interactivo</title>
+</head>
+<body>
+    <h1>Contador: <span id="counter">0</span></h1>
+    <button id="increaseBtn" onclick="increaseCounter()">Aumentar</button>
+    <button id="resetBtn" onclick="resetCounter()">Reiniciar</button>
+
+    <script type="text/javascript">
+        var count = 0;
+        let contador = document.getElementById('counter');
+        function increaseCounter() {
+            count++;
+            contador.textContent = count;
+        }
+        function resetCounter() {
+            count=0;
+            contador.textContent = count;
+        }
+    </script>
+</body>
+</html>
